@@ -3,7 +3,7 @@ package hexlet.code;
 import hexlet.code.interfaces.Cli;
 
 public class App {
-    private final Cli cliTool = new CliImpl();
+    private final Cli cliTool = new CliTool();
 
     private static String getStartGreeting() {
         return "Welcome to the Brain Games!\nMay I have your name? ";
