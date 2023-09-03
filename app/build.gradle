@@ -31,6 +31,10 @@ jar {
     }
 }
 
+run {
+    standardInput = System.in
+}
+
 compileJava {
     options.release.set(20)
 }
