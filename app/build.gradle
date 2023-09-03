@@ -30,3 +30,7 @@ jar {
         )
     }
 }
+
+compileJava {
+    options.release = 20
+}
