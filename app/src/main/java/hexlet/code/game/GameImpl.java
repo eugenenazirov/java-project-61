@@ -25,6 +25,8 @@ public class GameImpl implements Game {
                 this.user = getUserData();
             case EXIT:
                 System.exit(0);
+            default:
+                startGame();
         }
     }
 
