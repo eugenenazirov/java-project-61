@@ -1,6 +1,7 @@
 package hexlet.code;
 
-import hexlet.code.interfaces.Cli;
+import hexlet.code.cli.Cli;
+import hexlet.code.cli.CliTool;
 
 public class App {
     private final Cli cliTool;

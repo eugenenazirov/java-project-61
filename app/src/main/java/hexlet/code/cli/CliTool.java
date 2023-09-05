@@ -1,6 +1,6 @@
-package hexlet.code;
+package hexlet.code.cli;
 
-import hexlet.code.interfaces.Cli;
+import hexlet.code.cli.Cli;
 
 import java.util.Scanner;
 
