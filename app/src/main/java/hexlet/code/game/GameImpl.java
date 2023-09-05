@@ -13,10 +13,12 @@ public class GameImpl implements Game {
         this.cliTool = cliTool;
     }
 
+    @Override
     public void startGame() {
         setUp();
     }
 
+    @Override
     public void setUp() {
         GameOption gameOption = selectGameOption();
 
