@@ -3,6 +3,7 @@ package hexlet.code.game;
 import hexlet.code.cli.Cli;
 import hexlet.code.game.even.Even;
 import hexlet.code.randomizer.Randomizer;
+import hexlet.code.randomizer.RandomizerImpl;
 import hexlet.code.user.User;
 import hexlet.code.user.UserImpl;
 
@@ -10,21 +11,12 @@ import java.util.InputMismatchException;
 
 public class GameImpl implements Game {
     private final Cli cliTool;
-    private final Randomizer randomizer;
     private User user;
 
     public GameImpl(
             Cli cliTool
     ) {
         this.cliTool = cliTool;
-
-        Randomizer randomizer = new Randomizer() {
-            @Override
-            public int getRandomInt(int limit) {
-                return 15;
-            }
-        };
-        this.randomizer = randomizer;
     }
 
     @Override
@@ -42,11 +34,13 @@ public class GameImpl implements Game {
     }
 
     public void startGame(GameOption gameOption) {
+        Randomizer randomizer = new RandomizerImpl();
+
         switch (gameOption) {
             case GREET:
                 return;
             case EVEN:
-                runGame(new Even(this.randomizer, this.cliTool, this.user));
+                runGame(new Even(randomizer, this.cliTool, this.user));
                 return;
             case EXIT:
                 this.end();

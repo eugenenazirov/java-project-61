@@ -46,11 +46,6 @@ public class Even implements GameType {
         showSuccessMessage();
     }
 
-    @Override
-    public void finishRound() {
-
-    }
-
     public int getQuestionNumber() {
         return randomizer.getRandomInt(Config.INT_LIMIT);
     }
@@ -83,7 +78,7 @@ public class Even implements GameType {
     }
 
     public void showSuccessMessage() {
-        System.out.println("Congratulations, " + username);
+        System.out.println("Congratulations, " + username + "!");
     }
 
     public void showCorrectAnswerMessage() {
