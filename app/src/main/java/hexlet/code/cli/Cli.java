@@ -2,6 +2,6 @@ package hexlet.code.cli;
 
 public interface Cli {
     String getUserName();
-    String getGameType();
+    int getGameType();
     String getUserAnswer();
 }

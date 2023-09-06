@@ -9,8 +9,10 @@ public class CliTool implements Cli {
         return scanner.nextLine();
     }
 
-    public String getGameType() {
-        return scanner.nextLine();
+    public int getGameType() {
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+        return choice;
     }
 
     public String getUserAnswer() {

@@ -11,9 +11,9 @@ public class Even implements GameType {
     private int successCount = 0;
     private final Randomizer randomizer;
     private final Cli cliTool;
-    private String username;
+    private final String username;
 
-    Even(
+    public Even(
             Randomizer randomizer,
             Cli cliTool,
             User user
@@ -40,6 +40,7 @@ public class Even implements GameType {
             }
 
             showCorrectAnswerMessage();
+            this.successCount++;
         }
 
         showSuccessMessage();

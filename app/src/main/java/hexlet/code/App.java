@@ -8,6 +8,6 @@ public class App {
     public static void main(String[] args) {
         CliTool cliTool = new CliTool();
         GameImpl game = new GameImpl(cliTool);
-        game.startGame();
+        game.start();
     }
 }

@@ -2,7 +2,7 @@ package hexlet.code.game;
 
 public interface Game {
 
-    void startGame();
+    void start();
     void setUp();
     void end();
 }

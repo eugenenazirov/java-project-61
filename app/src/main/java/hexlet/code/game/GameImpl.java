@@ -1,34 +1,58 @@
 package hexlet.code.game;
 
 import hexlet.code.cli.Cli;
+import hexlet.code.game.even.Even;
+import hexlet.code.randomizer.Randomizer;
 import hexlet.code.user.User;
 import hexlet.code.user.UserImpl;
 
-public class GameImpl implements Game {
+import java.util.InputMismatchException;
 
+public class GameImpl implements Game {
     private final Cli cliTool;
+    private final Randomizer randomizer;
     private User user;
 
-    public GameImpl(Cli cliTool) {
+    public GameImpl(
+            Cli cliTool
+    ) {
         this.cliTool = cliTool;
+
+        Randomizer randomizer = new Randomizer() {
+            @Override
+            public int getRandomInt(int limit) {
+                return 15;
+            }
+        };
+        this.randomizer = randomizer;
     }
 
     @Override
-    public void startGame() {
+    public void start() {
         setUp();
     }
 
     @Override
     public void setUp() {
-        GameOption gameOption = selectGameOption();
+        GameOption gameOption;
+        try {
+            gameOption = selectGameOption();
+        } catch (IllegalArgumentException e) {
+            return;
+        }
 
         switch (gameOption) {
             case GREET:
                 this.user = getUserData();
+                break;
+            case EVEN:
+                startGame(new Even(this.randomizer, this.cliTool, this.user));
+                break;
             case EXIT:
                 System.exit(0);
+                break;
             default:
-                startGame();
+                start();
         }
     }
 
@@ -39,15 +63,14 @@ public class GameImpl implements Game {
         }
         System.out.print(getChoiceText());
 
-        String userChoice = cliTool.getGameType();
-        int optionNumber;
+        int userChoice;
         try {
-            optionNumber = Integer.parseInt(userChoice);
-        } catch (NumberFormatException e) {
-            optionNumber = -1;
+            userChoice = cliTool.getGameType();
+        } catch (InputMismatchException e) {
+            userChoice = -1;
         }
 
-        return GameOption.findByOptionNumber(optionNumber);
+        return GameOption.findByOptionNumber(userChoice);
     }
 
     private User getUserData() {
@@ -56,6 +79,10 @@ public class GameImpl implements Game {
         System.out.println(getPersonalGreeting(username));
 
         return new UserImpl(username);
+    }
+
+    private void startGame(GameType gameType) {
+        gameType.startRound();
     }
 
     public void end() {
