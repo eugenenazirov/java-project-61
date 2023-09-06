@@ -60,6 +60,7 @@ public class Even implements GameType {
     }
 
     public String getUserAnswer() {
+        System.out.print("Your answer: ");
         return cliTool.getUserAnswer();
     }
 
@@ -70,13 +71,15 @@ public class Even implements GameType {
 
     public void showQuestion(int number) {
         String question = "Question: " + number;
+        System.out.println(question);
     }
 
     public void showLostMessage(String userAnswer, String correctAnswer) {
         System.out.println(
-                "'" + userAnswer + "' is wrong answer ;(. " +
-                "Correct answer was " + "'" + correctAnswer + "'."
+                "'" + userAnswer + "' is wrong answer ;(. "
+                + "Correct answer was " + "'" + correctAnswer + "'."
         );
+        System.out.println("Let's try again, " + this.username + "!");
     }
 
     public void showSuccessMessage() {
@@ -84,6 +87,6 @@ public class Even implements GameType {
     }
 
     public void showCorrectAnswerMessage() {
-        System.out.println("Correct!");
+        System.out.println("Correct!\n");
     }
 }

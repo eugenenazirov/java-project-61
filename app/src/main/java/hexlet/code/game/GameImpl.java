@@ -29,28 +29,28 @@ public class GameImpl implements Game {
 
     @Override
     public void start() {
-        setUp();
-    }
-
-    @Override
-    public void setUp() {
         GameOption gameOption;
         try {
-            gameOption = selectGameOption();
+            gameOption = this.selectGameOption();
         } catch (IllegalArgumentException e) {
             return;
         }
 
+        this.user = getUserData();
+
+        this.startGame(gameOption);
+    }
+
+    public void startGame(GameOption gameOption) {
         switch (gameOption) {
             case GREET:
-                this.user = getUserData();
-                break;
+                return;
             case EVEN:
-                startGame(new Even(this.randomizer, this.cliTool, this.user));
-                break;
+                runGame(new Even(this.randomizer, this.cliTool, this.user));
+                return;
             case EXIT:
-                System.exit(0);
-                break;
+                this.end();
+                return;
             default:
                 start();
         }
@@ -81,12 +81,12 @@ public class GameImpl implements Game {
         return new UserImpl(username);
     }
 
-    private void startGame(GameType gameType) {
+    private void runGame(GameType gameType) {
         gameType.startRound();
     }
 
     public void end() {
-
+        System.exit(0);
     }
 
     private static String getSelectionText() {
