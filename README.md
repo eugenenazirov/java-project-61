@@ -6,7 +6,7 @@
 # Brain Games
 ### The simple games made with Java & Gradle
 
-1. Even. The user should detect if the number is even or not.
+#### 1. Even. The user should detect if the number is even or not.
 [![asciicast](https://asciinema.org/a/oHmnGrOjEto7lALBm4hCUgLE5.svg)](https://asciinema.org/a/oHmnGrOjEto7lALBm4hCUgLE5)
 
 2. Calc. Find the result of the expression.
