@@ -24,7 +24,7 @@ public abstract class GameBase implements Game {
 
     @Override
     public void startRound() {
-        showRoundTitle();
+        this.showRoundTitle();
 
         while (successCount < Config.MAX_ATTEMPTS) {
             Question question = this.generateQuestion();
@@ -34,15 +34,15 @@ public abstract class GameBase implements Game {
             String userAnswer = getUserAnswer();
 
             if (!userAnswer.equalsIgnoreCase(correctAnswer)) {
-                showLostMessage(userAnswer, correctAnswer);
+                this.showLostMessage(userAnswer, correctAnswer);
                 return;
             }
 
-            showCorrectAnswerMessage();
+            this.showCorrectAnswerMessage();
             this.successCount++;
         }
 
-        showSuccessMessage();
+        this.showSuccessMessage();
     }
 
     @Override
@@ -53,6 +53,7 @@ public abstract class GameBase implements Game {
         System.out.println("Question: " + question.getQuestion());
     }
 
+    @Override
     public void showLostMessage(String userAnswer, String correctAnswer) {
         System.out.println(
                 "'" + userAnswer + "' is wrong answer ;(. "
@@ -61,10 +62,12 @@ public abstract class GameBase implements Game {
         System.out.println("Let's try again, " + this.username + "!");
     }
 
+    @Override
     public void showSuccessMessage() {
         System.out.println("Congratulations, " + username + "!");
     }
 
+    @Override
     public void showCorrectAnswerMessage() {
         System.out.println("Correct!\n");
     }
