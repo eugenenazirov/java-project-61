@@ -50,7 +50,9 @@ public abstract class GameBase implements Game {
     public abstract Question generateQuestion();
 
     public int getNumberForQuestion() {
-        return this.randomizer.getRandomInt(Config.INT_LIMIT);
+        int start = 1;
+        int end = Config.INT_LIMIT;
+        return this.randomizer.getRandomInt(start, end);
     }
 
     public void showTitle() {

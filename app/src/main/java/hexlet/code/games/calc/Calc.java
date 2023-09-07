@@ -1,51 +1,57 @@
 package hexlet.code.games.calc;
 
+import hexlet.code.cli.Cli;
 import hexlet.code.games.Game;
+import hexlet.code.games.GameBase;
 import hexlet.code.games.question.Question;
+import hexlet.code.games.question.QuestionImpl;
+import hexlet.code.randomizer.Randomizer;
+import hexlet.code.user.User;
 
-public class Calc implements Game {
-    @Override
-    public void startRound() {
+public final class Calc extends GameBase implements Game {
 
+    private final String[] operations = new String[] {"+", "-", "*"};
+    public Calc(Randomizer randomizer, Cli cliTool, User user) {
+        super(randomizer, cliTool, user);
+        this.title = "What is the result of the expression?";
     }
 
-    @Override
-    public void showTitle() {
-
-    }
-
-    @Override
-    public int getNumberForQuestion() {
-        return 0;
-    }
-
-    @Override
     public Question generateQuestion() {
-        return null;
+        int firstNumber = this.getNumberForQuestion();
+        String operation = this.operations[this.getRandomOperationIdx()];
+        int secondNumber;
+
+        /*
+        If the operation is subtraction ("-"), regenerate the second number
+        until it won't be less than the first number
+         */
+        do {
+            secondNumber = this.getNumberForQuestion();
+        } while (
+                operation.equals("-") && firstNumber < secondNumber
+                || operation.equals("*") && secondNumber > 11
+        );
+
+        String correctAnswer = this.getCorrectAnswer(firstNumber, secondNumber, operation);
+
+        return new QuestionImpl(
+                (firstNumber + " " + operation + " " + secondNumber),
+                correctAnswer
+        );
     }
 
-    @Override
-    public String getUserAnswer() {
-        return null;
+    private int getRandomOperationIdx() {
+        return this.randomizer.getRandomInt(0, 2);
     }
 
-    @Override
-    public void showQuestion(Question question) {
+    public String getCorrectAnswer(int firstNumber, int secondNumber, String operation) {
+        int result = switch (operation) {
+            case "+" -> firstNumber + secondNumber;
+            case "-" -> firstNumber - secondNumber;
+            case "*" -> firstNumber * secondNumber;
+            default -> throw new IllegalArgumentException("Invalid operation was given: " + operation);
+        };
 
-    }
-
-    @Override
-    public void showLostMessage(String userAnswer, String correctAnswer) {
-
-    }
-
-    @Override
-    public void showSuccessMessage() {
-
-    }
-
-    @Override
-    public void showCorrectAnswerMessage() {
-
+        return Integer.toString(result);
     }
 }

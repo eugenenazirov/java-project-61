@@ -3,6 +3,7 @@ package hexlet.code.engine;
 import hexlet.code.cli.Cli;
 import hexlet.code.games.GameOption;
 import hexlet.code.games.Game;
+import hexlet.code.games.calc.Calc;
 import hexlet.code.games.even.Even;
 import hexlet.code.randomizer.Randomizer;
 import hexlet.code.randomizer.RandomizerImpl;
@@ -44,6 +45,8 @@ public class Engine implements GameEngine {
             case EVEN:
                 runGame(new Even(randomizer, this.cliTool, this.user));
                 return;
+            case CALC:
+                runGame(new Calc(randomizer, this.cliTool, this.user));
             case EXIT:
                 this.end();
                 return;
