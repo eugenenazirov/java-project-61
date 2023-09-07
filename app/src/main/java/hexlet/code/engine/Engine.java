@@ -1,7 +1,8 @@
 package hexlet.code.engine;
 
 import hexlet.code.cli.Cli;
-import hexlet.code.games.GameOption;
+import hexlet.code.games.gcd.GCD;
+import hexlet.code.games.shared.GameOption;
 import hexlet.code.games.Game;
 import hexlet.code.games.calc.Calc;
 import hexlet.code.games.even.Even;
@@ -47,6 +48,10 @@ public class Engine implements GameEngine {
                 return;
             case CALC:
                 runGame(new Calc(randomizer, this.cliTool, this.user));
+                return;
+            case GCD:
+                runGame(new GCD(randomizer, this.cliTool, this.user));
+                return;
             case EXIT:
                 this.end();
                 return;

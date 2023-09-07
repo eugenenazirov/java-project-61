@@ -3,8 +3,8 @@ package hexlet.code.games.even;
 import hexlet.code.cli.Cli;
 import hexlet.code.games.Game;
 import hexlet.code.games.GameBase;
-import hexlet.code.games.question.Question;
-import hexlet.code.games.question.QuestionImpl;
+import hexlet.code.games.shared.question.Question;
+import hexlet.code.games.shared.question.QuestionImpl;
 import hexlet.code.randomizer.Randomizer;
 import hexlet.code.user.User;
 

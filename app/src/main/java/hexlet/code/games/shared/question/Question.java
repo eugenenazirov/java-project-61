@@ -1,4 +1,4 @@
-package hexlet.code.games.question;
+package hexlet.code.games.shared.question;
 
 public interface Question {
     String getQuestion();

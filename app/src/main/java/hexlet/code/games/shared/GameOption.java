@@ -1,4 +1,4 @@
-package hexlet.code.games;
+package hexlet.code.games.shared;
 
 public enum GameOption {
     GREET(1, "Greet"),

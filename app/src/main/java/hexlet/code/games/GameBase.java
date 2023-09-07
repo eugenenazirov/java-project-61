@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Config;
 import hexlet.code.cli.Cli;
-import hexlet.code.games.question.Question;
+import hexlet.code.games.shared.question.Question;
 import hexlet.code.randomizer.Randomizer;
 import hexlet.code.user.User;
 

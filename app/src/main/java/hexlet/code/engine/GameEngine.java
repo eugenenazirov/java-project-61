@@ -1,6 +1,6 @@
 package hexlet.code.engine;
 
-import hexlet.code.games.GameOption;
+import hexlet.code.games.shared.GameOption;
 
 public interface GameEngine {
 
