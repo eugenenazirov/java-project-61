@@ -1,19 +1,18 @@
-package hexlet.code.game.even;
+package hexlet.code.games;
 
 import hexlet.code.Config;
 import hexlet.code.cli.Cli;
-import hexlet.code.game.GameType;
+import hexlet.code.games.question.Question;
 import hexlet.code.randomizer.Randomizer;
 import hexlet.code.user.User;
 
-public class Even implements GameType {
-
+public abstract class GameBase implements Game {
     private int successCount = 0;
-    private final Randomizer randomizer;
-    private final Cli cliTool;
-    private final String username;
+    protected final Randomizer randomizer;
+    protected final Cli cliTool;
+    protected final String username;
 
-    public Even(
+    public GameBase(
             Randomizer randomizer,
             Cli cliTool,
             User user
@@ -27,11 +26,11 @@ public class Even implements GameType {
     public void startRound() {
         showRoundTitle();
 
-        while (successCount < 3) {
-            int questionNumber = getQuestionNumber();
-            showQuestion(questionNumber);
+        while (successCount < Config.MAX_ATTEMPTS) {
+            Question question = this.generateQuestion();
+            this.showQuestion(question);
 
-            String correctAnswer = getCorrectAnswer(questionNumber);
+            String correctAnswer = question.getCorrectAnswer();
             String userAnswer = getUserAnswer();
 
             if (!userAnswer.equalsIgnoreCase(correctAnswer)) {
@@ -46,33 +45,18 @@ public class Even implements GameType {
         showSuccessMessage();
     }
 
-    public int getQuestionNumber() {
-        return randomizer.getRandomInt(Config.INT_LIMIT);
-    }
+    @Override
+    public abstract Question generateQuestion();
 
-    public String getCorrectAnswer(int number) {
-        return (number % 2 == 0) ? "yes" : "no";
-    }
-
-    public String getUserAnswer() {
-        System.out.print("Your answer: ");
-        return cliTool.getUserAnswer();
-    }
-
-    public void showRoundTitle() {
-        String roundTitle = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        System.out.println(roundTitle);
-    }
-
-    public void showQuestion(int number) {
-        String question = "Question: " + number;
-        System.out.println(question);
+    @Override
+    public void showQuestion(Question question) {
+        System.out.println("Question: " + question.getQuestion());
     }
 
     public void showLostMessage(String userAnswer, String correctAnswer) {
         System.out.println(
                 "'" + userAnswer + "' is wrong answer ;(. "
-                + "Correct answer was " + "'" + correctAnswer + "'."
+                        + "Correct answer was " + "'" + correctAnswer + "'."
         );
         System.out.println("Let's try again, " + this.username + "!");
     }

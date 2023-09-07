@@ -1,7 +1,9 @@
-package hexlet.code.game;
+package hexlet.code.engine;
 
 import hexlet.code.cli.Cli;
-import hexlet.code.game.even.Even;
+import hexlet.code.games.GameOption;
+import hexlet.code.games.Game;
+import hexlet.code.games.even.Even;
 import hexlet.code.randomizer.Randomizer;
 import hexlet.code.randomizer.RandomizerImpl;
 import hexlet.code.user.User;
@@ -9,11 +11,11 @@ import hexlet.code.user.UserImpl;
 
 import java.util.InputMismatchException;
 
-public class GameImpl implements Game {
+public class Engine implements GameEngine {
     private final Cli cliTool;
     private User user;
 
-    public GameImpl(
+    public Engine(
             Cli cliTool
     ) {
         this.cliTool = cliTool;
@@ -75,8 +77,8 @@ public class GameImpl implements Game {
         return new UserImpl(username);
     }
 
-    private void runGame(GameType gameType) {
-        gameType.startRound();
+    private void runGame(Game game) {
+        game.startRound();
     }
 
     public void end() {
