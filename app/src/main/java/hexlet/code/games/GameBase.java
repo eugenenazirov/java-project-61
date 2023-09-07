@@ -7,6 +7,7 @@ import hexlet.code.randomizer.Randomizer;
 import hexlet.code.user.User;
 
 public abstract class GameBase implements Game {
+    protected String title;
     private int successCount = 0;
     protected final Randomizer randomizer;
     protected final Cli cliTool;
@@ -24,7 +25,7 @@ public abstract class GameBase implements Game {
 
     @Override
     public void startRound() {
-        this.showRoundTitle();
+        this.showTitle();
 
         while (successCount < Config.MAX_ATTEMPTS) {
             Question question = this.generateQuestion();
@@ -48,9 +49,22 @@ public abstract class GameBase implements Game {
     @Override
     public abstract Question generateQuestion();
 
+    public int getNumberForQuestion() {
+        return this.randomizer.getRandomInt(Config.INT_LIMIT);
+    }
+
+    public void showTitle() {
+        System.out.println(this.title);
+    }
+
     @Override
     public void showQuestion(Question question) {
         System.out.println("Question: " + question.getQuestion());
+    }
+
+    public String getUserAnswer() {
+        System.out.print("Your answer: ");
+        return this.cliTool.getUserAnswer();
     }
 
     @Override

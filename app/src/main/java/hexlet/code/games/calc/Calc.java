@@ -10,7 +10,7 @@ public class Calc implements Game {
     }
 
     @Override
-    public void showRoundTitle() {
+    public void showTitle() {
 
     }
 

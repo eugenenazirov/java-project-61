@@ -5,7 +5,7 @@ import hexlet.code.games.question.Question;
 
 public interface Game {
     void startRound();
-    void showRoundTitle();
+    void showTitle();
     int getNumberForQuestion();
     Question generateQuestion();
     String getUserAnswer();
