@@ -1,6 +1,6 @@
 package hexlet.code.user;
 
-public class UserImpl implements User {
+public final class UserImpl implements User {
 
     private String username;
 

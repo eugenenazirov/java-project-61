@@ -3,7 +3,7 @@ package hexlet.code.randomizer;
 
 import java.util.Random;
 
-public class RandomizerImpl implements Randomizer {
+public final class RandomizerImpl implements Randomizer {
     private final Random random = new Random();
     @Override
     public int getRandomInt(int start, int end) {
