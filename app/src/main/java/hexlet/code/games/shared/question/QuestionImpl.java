@@ -15,8 +15,8 @@ public final class QuestionImpl implements Question {
     }
 
     @Override
-    public void setQuestion(String question) {
-        this.question = question;
+    public void setQuestion(String questionStrRepresentation) {
+        this.question = questionStrRepresentation;
     }
 
     @Override
