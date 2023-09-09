@@ -12,6 +12,8 @@ import java.util.Arrays;
 
 public final class Prime extends GameBase implements Game {
 
+    private static final int START_CHECK_PRIME = 3;
+
     public Prime(Randomizer randomizer, Cli cliTool, User user) {
         super(randomizer, cliTool, user);
         this.setTitle("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
@@ -41,9 +43,8 @@ public final class Prime extends GameBase implements Game {
             return false;  // Even numbers (except 2) are not prime
         }
 
-        int startCheck = 3;
         int sqrt = (int) Math.sqrt(num);
-        for (int i = startCheck; i <= sqrt; i += 2) {
+        for (int i = START_CHECK_PRIME; i <= sqrt; i += 2) {
             if (num % i == 0) {
                 return false;
             }

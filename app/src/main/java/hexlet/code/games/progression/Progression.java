@@ -10,6 +10,7 @@ import hexlet.code.randomizer.Randomizer;
 import hexlet.code.user.User;
 
 public final class Progression extends GameBase implements Game {
+    private static final int PROGRESSION_STEP_LIMIT = 12;
 
     public Progression(Randomizer randomizer, Cli cliTool, User user) {
         super(randomizer, cliTool, user);
@@ -63,7 +64,7 @@ public final class Progression extends GameBase implements Game {
     }
 
     private int getProgressionStep() {
-        return this.getRandomTool().getRandomInt(2, 12);
+        return this.getRandomTool().getRandomInt(2, PROGRESSION_STEP_LIMIT);
     }
 
     private int getMissingIdx(int[] array) {
