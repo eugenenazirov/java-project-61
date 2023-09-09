@@ -161,7 +161,7 @@ public abstract class GameBase implements Game {
     /**
      * Sets the title for the game.
      *
-     * @param gameTitle the desired title.
+     * @param title the desired title.
      */
     public void setGameTitle(String title) {
         this.gameTitle = title;

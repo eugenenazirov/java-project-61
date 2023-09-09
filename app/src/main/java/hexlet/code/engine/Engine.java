@@ -19,10 +19,8 @@ public final class Engine implements GameEngine {
     private final Cli cliTool;
     private User user;
 
-    public Engine(
-            Cli cliTool
-    ) {
-        this.cliTool = cliTool;
+    public Engine(Cli cli) {
+        this.cliTool = cli;
     }
 
     @Override

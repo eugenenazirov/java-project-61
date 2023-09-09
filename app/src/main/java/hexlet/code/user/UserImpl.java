@@ -12,7 +12,7 @@ public final class UserImpl implements User {
         return this.username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsername(String name) {
+        this.username = name;
     }
 }

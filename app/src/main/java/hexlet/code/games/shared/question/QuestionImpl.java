@@ -25,7 +25,7 @@ public final class QuestionImpl implements Question {
     }
 
     @Override
-    public void setAnswer(String answer) {
-        this.answer = answer;
+    public void setAnswer(String correctAnswer) {
+        this.answer = correctAnswer;
     }
 }
