@@ -167,14 +167,29 @@ public abstract class GameBase implements Game {
         this.title = title;
     }
 
+    /**
+     * Gets the Command Line Interface (CLI) tool being used.
+     *
+     * @return the current CLI tool instance.
+     */
     public Cli getCli() {
         return this.cli;
     }
 
+    /**
+     * Gets the tool used for random number generation.
+     *
+     * @return the current randomizer instance.
+     */
     public Randomizer getRandomTool() {
         return this.random;
     }
 
+    /**
+     * Gets the username.
+     *
+     * @return the current username as a string.
+     */
     public String getUsername() {
         return this.username;
     }
