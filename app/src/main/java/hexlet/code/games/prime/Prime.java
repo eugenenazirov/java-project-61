@@ -8,7 +8,6 @@ import hexlet.code.games.shared.question.QuestionImpl;
 import hexlet.code.randomizer.Randomizer;
 import hexlet.code.user.User;
 
-import java.util.Arrays;
 
 public final class Prime extends GameBase implements Game {
 
@@ -36,7 +35,7 @@ public final class Prime extends GameBase implements Game {
         if (num < 2) {
             return false;
         }
-        if (Arrays.stream(smallestPrimeNumbers).anyMatch(n -> n == num)) {
+        if (num == 2 || num == START_CHECK_PRIME) {
             return true;
         }
         if (num % 2 == 0) {
