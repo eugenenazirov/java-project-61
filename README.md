@@ -17,4 +17,7 @@
 <br>
 #### 4. Progression. Detect the missing element of arithmetic progression.
 [![asciicast](https://asciinema.org/a/FHpZ2xw5DK8CY8JxQVhKIYqJa.svg)](https://asciinema.org/a/FHpZ2xw5DK8CY8JxQVhKIYqJa)
+<br>
+#### 5. Prime. Define is the number prime or not.
+[![asciicast](https://asciinema.org/a/2ozqY1yfj3WIP37u62TSS6pa2.svg)](https://asciinema.org/a/2ozqY1yfj3WIP37u62TSS6pa2)
 
