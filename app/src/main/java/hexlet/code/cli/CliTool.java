@@ -2,7 +2,7 @@ package hexlet.code.cli;
 
 import java.util.Scanner;
 
-public class CliTool implements Cli {
+public final class CliTool implements Cli {
     private final Scanner scanner = new Scanner(System.in);
 
     public String getUserName() {

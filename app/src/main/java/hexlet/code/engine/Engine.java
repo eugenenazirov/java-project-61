@@ -15,7 +15,7 @@ import hexlet.code.user.UserImpl;
 
 import java.util.InputMismatchException;
 
-public class Engine implements GameEngine {
+public final class Engine implements GameEngine {
     private final Cli cliTool;
     private User user;
 
@@ -56,7 +56,7 @@ public class Engine implements GameEngine {
     private GameOption selectGameOption() {
         System.out.println(getSelectionText());
         for (GameOption option : GameOption.values()) {
-            System.out.println(option.getOptionNumber() + " - " + option.getDescription());
+            System.out.println(option.getOptionNumber() + " - " + option.getOptionDescription());
         }
         System.out.print(getChoiceText());
 

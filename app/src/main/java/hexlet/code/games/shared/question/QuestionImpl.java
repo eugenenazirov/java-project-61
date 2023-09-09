@@ -1,12 +1,12 @@
 package hexlet.code.games.shared.question;
 
-public class QuestionImpl implements Question {
+public final class QuestionImpl implements Question {
     private String question;
-    private String correctAnswer;
+    private String answer;
 
-    public QuestionImpl(String question, String correctAnswer) {
-        this.question = question;
-        this.correctAnswer = correctAnswer;
+    public QuestionImpl(String generatedQuestion, String correctAnswer) {
+        this.question = generatedQuestion;
+        this.answer = correctAnswer;
     }
 
     @Override
@@ -20,12 +20,12 @@ public class QuestionImpl implements Question {
     }
 
     @Override
-    public String getCorrectAnswer() {
-        return this.correctAnswer;
+    public String getAnswer() {
+        return this.answer;
     }
 
     @Override
-    public void setCorrectAnswer(String answer) {
-        this.correctAnswer = answer;
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 }

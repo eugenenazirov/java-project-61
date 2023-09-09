@@ -10,19 +10,19 @@ public enum GameOption {
     EXIT(0, "Exit");
 
     private final int optionNumber;
-    private final String description;
+    private final String optionDescription;
 
-    GameOption(int optionNumber, String description) {
-        this.optionNumber = optionNumber;
-        this.description = description;
+    GameOption(int option, String description) {
+        this.optionNumber = option;
+        this.optionDescription = description;
     }
 
     public int getOptionNumber() {
         return optionNumber;
     }
 
-    public String getDescription() {
-        return description;
+    public String getOptionDescription() {
+        return optionDescription;
     }
 
     public static GameOption findByOptionNumber(int optionNumber) {

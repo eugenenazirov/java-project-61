@@ -51,7 +51,7 @@ public abstract class GameBase implements Game {
             Question question = this.generateQuestion();
             this.showQuestion(question);
 
-            String correctAnswer = question.getCorrectAnswer();
+            String correctAnswer = question.getAnswer();
             String userAnswer = getUserAnswer();
 
             if (!userAnswer.equalsIgnoreCase(correctAnswer)) {
