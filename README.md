@@ -14,3 +14,7 @@
 <br>
 #### 3. GCD. Find the greatest common divisor of two numbers.
 [![asciicast](https://asciinema.org/a/bL1QJ82vJSuEJaGViXthyzUNl.svg)](https://asciinema.org/a/bL1QJ82vJSuEJaGViXthyzUNl)
+<br>
+#### 4. Progression. Detect the missing element of arithmetic progression.
+[![asciicast](https://asciinema.org/a/FHpZ2xw5DK8CY8JxQVhKIYqJa.svg)](https://asciinema.org/a/FHpZ2xw5DK8CY8JxQVhKIYqJa)
+
