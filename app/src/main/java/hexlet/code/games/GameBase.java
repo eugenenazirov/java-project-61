@@ -13,7 +13,7 @@ import hexlet.code.user.User;
  * </p>
  */
 public abstract class GameBase implements Game {
-    private String title;
+    private String gameTitle;
     private int successCount = 0;
     private final Randomizer random;
     private final Cli cli;
@@ -94,7 +94,7 @@ public abstract class GameBase implements Game {
      */
     @Override
     public void showTitle() {
-        System.out.println(this.getTitle());
+        System.out.println(this.getGameTitle());
     }
 
     /**
@@ -115,7 +115,7 @@ public abstract class GameBase implements Game {
     @Override
     public String getUserAnswer() {
         System.out.print("Your answer: ");
-        return this.cli.getUserAnswer();
+        return this.getCliTool().getUserAnswer();
     }
 
     /**
@@ -130,7 +130,7 @@ public abstract class GameBase implements Game {
                 "'" + userAnswer + "' is wrong answer ;(. "
                         + "Correct answer was " + "'" + correctAnswer + "'."
         );
-        System.out.println("Let's try again, " + this.username + "!");
+        System.out.println("Let's try again, " + this.getUsername() + "!");
     }
 
     /**
@@ -154,17 +154,17 @@ public abstract class GameBase implements Game {
      *
      * @return the game's title.
      */
-    public String getTitle() {
-        return this.title;
+    public String getGameTitle() {
+        return this.gameTitle;
     }
 
     /**
      * Sets the title for the game.
      *
-     * @param title the desired title.
+     * @param gameTitle the desired title.
      */
-    public void setTitle(String title) {
-        this.title = title;
+    public void setGameTitle(String gameTitle) {
+        this.gameTitle = gameTitle;
     }
 
     /**
@@ -172,7 +172,7 @@ public abstract class GameBase implements Game {
      *
      * @return the current CLI tool instance.
      */
-    public Cli getCli() {
+    public Cli getCliTool() {
         return this.cli;
     }
 

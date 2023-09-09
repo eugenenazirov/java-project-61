@@ -12,7 +12,7 @@ public final class Even extends GameBase implements Game {
 
     public Even(Randomizer randomizer, Cli cliTool, User user) {
         super(randomizer, cliTool, user);
-        this.setTitle("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        this.setGameTitle("Answer 'yes' if the number is even, otherwise answer 'no'.");
     }
 
     @Override

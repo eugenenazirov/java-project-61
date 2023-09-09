@@ -14,7 +14,7 @@ public final class Calc extends GameBase implements Game {
     private final String[] operations = new String[] {"+", "-", "*"};
     public Calc(Randomizer randomizer, Cli cliTool, User user) {
         super(randomizer, cliTool, user);
-        this.setTitle("What is the result of the expression?");
+        this.setGameTitle("What is the result of the expression?");
     }
 
     @Override
