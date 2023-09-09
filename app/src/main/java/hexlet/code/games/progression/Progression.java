@@ -63,10 +63,10 @@ public final class Progression extends GameBase implements Game {
     }
 
     private int getProgressionStep() {
-        return this.randomizer.getRandomInt(2, 12);
+        return this.getRandomTool().getRandomInt(2, 12);
     }
 
     private int getMissingIdx(int[] array) {
-        return this.randomizer.getRandomInt(0, array.length - 1);
+        return this.getRandomTool().getRandomInt(0, array.length - 1);
     }
 }

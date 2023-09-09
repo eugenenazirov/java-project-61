@@ -4,8 +4,8 @@ public final class UserImpl implements User {
 
     private String username;
 
-    public UserImpl(String username) {
-        this.username = username;
+    public UserImpl(String name) {
+        this.username = name;
     }
 
     public String getUsername() {

@@ -15,9 +15,9 @@ import hexlet.code.user.User;
 public abstract class GameBase implements Game {
     private String title;
     private int successCount = 0;
-    protected final Randomizer randomizer;
-    protected final Cli cliTool;
-    protected final String username;
+    private final Randomizer random;
+    private final Cli cli;
+    private final String username;
 
     /**
      * Constructor to initialize the essential components required for the game.
@@ -31,8 +31,8 @@ public abstract class GameBase implements Game {
             Cli cliTool,
             User user
     ) {
-        this.randomizer = randomizer;
-        this.cliTool = cliTool;
+        this.random = randomizer;
+        this.cli = cliTool;
         this.username = user.getUsername();
     }
 
@@ -85,7 +85,7 @@ public abstract class GameBase implements Game {
     public int getNumberForQuestion() {
         int start = 1;
         int end = Config.INT_LIMIT;
-        return this.randomizer.getRandomInt(start, end);
+        return this.random.getRandomInt(start, end);
     }
 
 
@@ -115,7 +115,7 @@ public abstract class GameBase implements Game {
     @Override
     public String getUserAnswer() {
         System.out.print("Your answer: ");
-        return this.cliTool.getUserAnswer();
+        return this.cli.getUserAnswer();
     }
 
     /**
@@ -165,5 +165,17 @@ public abstract class GameBase implements Game {
      */
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Cli getCli() {
+        return this.cli;
+    }
+
+    public Randomizer getRandomTool() {
+        return this.random;
+    }
+
+    public String getUsername() {
+        return this.username;
     }
 }

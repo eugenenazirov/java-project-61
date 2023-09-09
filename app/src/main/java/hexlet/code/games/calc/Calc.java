@@ -43,7 +43,7 @@ public final class Calc extends GameBase implements Game {
     }
 
     private int getRandomOperationIdx() {
-        return this.randomizer.getRandomInt(0, 2);
+        return this.getRandomTool().getRandomInt(0, 2);
     }
 
     public String getCorrectAnswer(int firstNumber, int secondNumber, String operation) {
