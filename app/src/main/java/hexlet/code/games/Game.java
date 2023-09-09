@@ -6,7 +6,6 @@ import hexlet.code.games.shared.question.Question;
 public interface Game {
     void startRound();
     void showTitle();
-    int getNumberForQuestion();
     Question generateQuestion();
     String getUserAnswer();
     void showQuestion(Question question);

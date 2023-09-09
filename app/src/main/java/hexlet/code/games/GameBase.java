@@ -55,6 +55,7 @@ public abstract class GameBase implements Game {
         return this.randomizer.getRandomInt(start, end);
     }
 
+    @Override
     public void showTitle() {
         System.out.println(this.title);
     }
@@ -64,6 +65,7 @@ public abstract class GameBase implements Game {
         System.out.println("Question: " + question.getQuestion());
     }
 
+    @Override
     public String getUserAnswer() {
         System.out.print("Your answer: ");
         return this.cliTool.getUserAnswer();

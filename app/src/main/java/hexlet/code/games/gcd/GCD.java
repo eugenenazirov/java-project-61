@@ -8,7 +8,7 @@ import hexlet.code.games.shared.question.QuestionImpl;
 import hexlet.code.randomizer.Randomizer;
 import hexlet.code.user.User;
 
-public class GCD extends GameBase implements Game {
+public final class GCD extends GameBase implements Game {
 
     public GCD(Randomizer randomizer, Cli cliTool, User user) {
         super(randomizer, cliTool, user);

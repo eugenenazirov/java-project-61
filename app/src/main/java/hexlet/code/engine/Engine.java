@@ -2,6 +2,7 @@ package hexlet.code.engine;
 
 import hexlet.code.cli.Cli;
 import hexlet.code.games.gcd.GCD;
+import hexlet.code.games.progression.Progression;
 import hexlet.code.games.shared.GameOption;
 import hexlet.code.games.Game;
 import hexlet.code.games.calc.Calc;
@@ -52,11 +53,14 @@ public class Engine implements GameEngine {
             case GCD:
                 runGame(new GCD(randomizer, this.cliTool, this.user));
                 return;
+            case PROGRESSION:
+                runGame(new Progression(randomizer, this.cliTool, this.user));
+                return;
             case EXIT:
                 this.end();
                 return;
             default:
-                start();
+                this.end();
         }
     }
 
