@@ -12,7 +12,7 @@ public final class GCD extends GameBase implements Game {
 
     public GCD(Randomizer randomizer, Cli cliTool, User user) {
         super(randomizer, cliTool, user);
-        this.title = "Find the greatest common divisor of given numbers.";
+        this.setTitle("Find the greatest common divisor of given numbers.");
     }
 
     @Override

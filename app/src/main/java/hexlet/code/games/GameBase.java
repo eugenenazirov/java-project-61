@@ -7,7 +7,7 @@ import hexlet.code.randomizer.Randomizer;
 import hexlet.code.user.User;
 
 public abstract class GameBase implements Game {
-    protected String title;
+    private String title;
     private int successCount = 0;
     protected final Randomizer randomizer;
     protected final Cli cliTool;
@@ -57,7 +57,7 @@ public abstract class GameBase implements Game {
 
     @Override
     public void showTitle() {
-        System.out.println(this.title);
+        System.out.println(this.getTitle());
     }
 
     @Override
@@ -88,5 +88,13 @@ public abstract class GameBase implements Game {
     @Override
     public void showCorrectAnswerMessage() {
         System.out.println("Correct!\n");
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

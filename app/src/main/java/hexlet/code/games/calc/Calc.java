@@ -10,10 +10,11 @@ import hexlet.code.user.User;
 
 public final class Calc extends GameBase implements Game {
 
+    private static final int MAX_MULTIPLIER = 11;
     private final String[] operations = new String[] {"+", "-", "*"};
     public Calc(Randomizer randomizer, Cli cliTool, User user) {
         super(randomizer, cliTool, user);
-        this.title = "What is the result of the expression?";
+        this.setTitle("What is the result of the expression?");
     }
 
     @Override
@@ -30,7 +31,7 @@ public final class Calc extends GameBase implements Game {
             secondNumber = this.getNumberForQuestion();
         } while (
                 operation.equals("-") && firstNumber < secondNumber
-                || operation.equals("*") && secondNumber > 11
+                || operation.equals("*") && secondNumber > MAX_MULTIPLIER
         );
 
         String correctAnswer = this.getCorrectAnswer(firstNumber, secondNumber, operation);

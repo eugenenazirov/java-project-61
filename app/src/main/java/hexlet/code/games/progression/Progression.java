@@ -13,7 +13,7 @@ public final class Progression extends GameBase implements Game {
 
     public Progression(Randomizer randomizer, Cli cliTool, User user) {
         super(randomizer, cliTool, user);
-        this.title = "What number is missing in the progression?";
+        this.setTitle("What number is missing in the progression?");
     }
 
     @Override

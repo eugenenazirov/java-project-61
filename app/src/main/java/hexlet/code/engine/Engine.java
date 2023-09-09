@@ -43,27 +43,13 @@ public class Engine implements GameEngine {
         Randomizer randomizer = new RandomizerImpl();
 
         switch (gameOption) {
-            case GREET:
-                return;
-            case EVEN:
-                runGame(new Even(randomizer, this.cliTool, this.user));
-                return;
-            case CALC:
-                runGame(new Calc(randomizer, this.cliTool, this.user));
-                return;
-            case GCD:
-                runGame(new GCD(randomizer, this.cliTool, this.user));
-                return;
-            case PROGRESSION:
-                runGame(new Progression(randomizer, this.cliTool, this.user));
-                return;
-            case PRIME:
-                runGame(new Prime(randomizer, this.cliTool, this.user));
-            case EXIT:
-                this.end();
-                return;
-            default:
-                this.end();
+            case GREET -> { }
+            case EVEN -> runGame(new Even(randomizer, this.cliTool, this.user));
+            case CALC -> runGame(new Calc(randomizer, this.cliTool, this.user));
+            case GCD -> runGame(new GCD(randomizer, this.cliTool, this.user));
+            case PROGRESSION -> runGame(new Progression(randomizer, this.cliTool, this.user));
+            case PRIME -> runGame(new Prime(randomizer, this.cliTool, this.user));
+            default -> this.end();
         }
     }
 

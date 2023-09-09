@@ -12,7 +12,7 @@ public class Prime extends GameBase implements Game {
 
     public Prime(Randomizer randomizer, Cli cliTool, User user) {
         super(randomizer, cliTool, user);
-        this.title = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        this.setTitle("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
     }
 
     @Override
