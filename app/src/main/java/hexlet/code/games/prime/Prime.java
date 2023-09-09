@@ -30,8 +30,6 @@ public final class Prime extends GameBase implements Game {
     }
 
     private static boolean checkIsNumberPrime(int num) {
-        int[] smallestPrimeNumbers = new int[]{2, 3};
-
         if (num < 2) {
             return false;
         }
