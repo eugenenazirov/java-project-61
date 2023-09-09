@@ -16,6 +16,7 @@ public final class Calc extends GameBase implements Game {
         this.title = "What is the result of the expression?";
     }
 
+    @Override
     public Question generateQuestion() {
         int firstNumber = this.getNumberForQuestion();
         String operation = this.operations[this.getRandomOperationIdx()];

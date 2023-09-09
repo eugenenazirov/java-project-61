@@ -15,6 +15,7 @@ public final class Even extends GameBase implements Game {
         this.title = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 
+    @Override
     public Question generateQuestion() {
         int questionNumber = this.getNumberForQuestion();
         String correctAnswer = this.getCorrectAnswer(questionNumber);
